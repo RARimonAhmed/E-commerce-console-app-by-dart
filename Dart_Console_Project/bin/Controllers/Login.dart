@@ -7,9 +7,6 @@ class Login {
   int coderun = 1;
   //Code for pattern shape or creating box
   void printingPattern(String n, String p) {
-    print(n);
-    print(p);
-
     for (int i = 1; i <= 20; i++) {
       for (int j = 1; j <= 20; j++) {
         if (i == 1 || i == 20 || j == 1) {
@@ -28,11 +25,7 @@ class Login {
             password = stdin.readLineSync()!;
 
             if (type.isNotEmpty && name.isNotEmpty && password.isNotEmpty) {
-              print("object");
-              print(n);
-              print(p);
-              print(name + password);
-              if ((name.contains(n) && (password.contains(password)))) {
+              if ((n.contains(name)) && ((p.contains(password)))) {
                 print("Congrets pass and name equals...");
               } else {
                 print("Dont match something...lets try again.");
