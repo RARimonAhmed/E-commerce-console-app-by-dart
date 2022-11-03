@@ -26,12 +26,7 @@ class Login {
             name = stdin.readLineSync()!;
             stdout.write("**\t\tPlease enter your password : ");
             password = stdin.readLineSync()!;
-
             if (type.isNotEmpty && name.isNotEmpty && password.isNotEmpty) {
-              print("object");
-              print(n);
-              print(p);
-              print(name + password);
               if ((name.contains(n) && (password.contains(password)))) {
                 print("Congrets pass and name equals...");
               } else {

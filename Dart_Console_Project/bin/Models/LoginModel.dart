@@ -15,7 +15,7 @@ class LoginModel {
   }
 
   String getPassword() {
-    for (String str in loginDetails.keys) {
+    for (String str in loginDetails.values) {
       password += str + ",";
     }
     password = password.replaceAll(",", " ");
