@@ -31,7 +31,8 @@ class Login {
               print("object");
               print(n);
               print(p);
-              if ((n.contains(name) && (p.contains(password)))) {
+              print(name + password);
+              if ((name.contains(n) && (password.contains(password)))) {
                 print("Congrets pass and name equals...");
               } else {
                 print("Dont match something...lets try again.");
