@@ -8,7 +8,6 @@ void main() {
 
   Login l = new Login();
   late String name, pass;
-  print("First");
   print("Here is your shape output...");
   againcode:
   while (true) {
@@ -28,7 +27,5 @@ void main() {
   }
   logModel.getName();
   logModel.getPassword();
-  // print(logModel.name);
-  // print(logModel.password);
   l.printingPattern(logModel.name, logModel.password);
 }

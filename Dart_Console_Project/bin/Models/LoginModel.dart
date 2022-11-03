@@ -11,7 +11,6 @@ class LoginModel {
     }
     name = name.replaceAll(",", " ");
     return name;
-    // print(name);
   }
 
   String getPassword() {
@@ -20,6 +19,5 @@ class LoginModel {
     }
     password = password.replaceAll(",", " ");
     return password;
-    // print(name);
   }
 }
