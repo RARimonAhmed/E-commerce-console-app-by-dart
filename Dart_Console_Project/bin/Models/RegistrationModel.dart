@@ -1,6 +1,4 @@
-import '../Controllers/RegistrationController.dart';
-
-class RegitrationModel extends RegistrationController {
+class RegitrationModel {
   String name = "", password = "";
   Map<String, String> loginDetails = {};
   void showValue(String name, String password) {
