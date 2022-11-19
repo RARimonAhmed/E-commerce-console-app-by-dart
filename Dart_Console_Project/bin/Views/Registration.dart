@@ -1,29 +1,20 @@
-import 'dart:io';
-
+import '../Controllers/LoginController.dart';
 import '../Models/RegistrationModel.dart';
+import 'Login.dart';
+import 'ShapeDesign.dart';
 
-class RegistrationView extends RegitrationModel {
-  late String name, pass;
+late ShapeDesign shapedesign;
+LoginController lC = new LoginController();
+RegitrationModel regimodel = new RegitrationModel();
+LoginView loginView = new LoginView();
+
+class RegistrationView {
+  late String name, pass, type = "";
   void registrationView() {
-    print("Registration Page.");
-    print("Use 1 letter for exit.");
-    againcode:
-    while (true) {
-      print("Please enter your name : ");
-      name = stdin.readLineSync()!;
-      print("Please enter your password : ");
-      pass = stdin.readLineSync()!;
-      if (name.length == 1) {
-        name = "";
-        pass = "";
-        break;
-      } else if (name.isNotEmpty && pass.isNotEmpty) {
-        printingPattern(name, pass);
-        showValue(name, pass);
-      } else {
-        print("Please give type, name, password.");
-        continue againcode;
-      }
-    }
+    shapedesign = new ShapeDesign("Registration");
+    shapedesign.shapePattern();
+    lC.printingPattern(shapedesign.name, shapedesign.password);
+    loginView.loginView(
+        shapedesign.type, shapedesign.name, shapedesign.password);
   }
 }
