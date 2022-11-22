@@ -1,23 +1,35 @@
 import '../Models/LoginModel.dart';
-import '../Models/RegistrationModel.dart';
+import '../Views/ProductView.dart';
 import '../Views/ShapeDesign.dart';
 
 ShapeDesign shapeDesign = new ShapeDesign("Login");
-RegitrationModel regModel = new RegitrationModel();
 LoginModel loginModel = new LoginModel();
+ProductView productView = new ProductView();
+late ShapeDesign shapeOfChoice;
 
 class LoginController {
-//Code for pattern shape or creating box
+  String name = "", password = "", type = "";
   void printingPattern(String n, String p) {
+    print(shapeDesign.choiceOption);
     shapeDesign.shapePattern();
   }
 
-  void loginWorking(String t, String n, String p) {
+  void addValues(String type, String name, String password) {
+    loginModel.showlogValue(name, password);
+    loginModel.getlogName();
+    loginModel.getlogPassword();
+    this.type = type;
+    this.password = password;
+    this.name = name;
+  }
+
+  void loginWorking(String type, String n, String p) {
     while (true) {
-      if (t.isNotEmpty && n.isNotEmpty && p.isNotEmpty) {
-        if ((n.contains(shapeDesign.name)) &&
-            (p.contains(shapeDesign.password))) {
-          print("Congrets pass and name equals...");
+      if (type.isNotEmpty && n.isNotEmpty && p.isNotEmpty) {
+        if ((n.contains(name)) && (p.contains(password))) {
+          print("Congrets");
+          productView.displayProductView();
+          shapeOfChoice = new ShapeDesign(type);
           break;
         } else {
           print("Dont match something...lets try again.");
@@ -26,6 +38,7 @@ class LoginController {
         }
       } else {
         print("Please give type, name, password.");
+        break;
       }
     }
   }
