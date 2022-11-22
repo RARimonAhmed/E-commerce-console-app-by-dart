@@ -1,6 +1,7 @@
 class LoginModel {
   String password = "", name = "", type = "";
   Map<String, String> logMap = {};
+
   void showlogValue(String name, String password) {
     logMap.addAll({name: password});
   }
